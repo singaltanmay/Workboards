@@ -30,7 +30,6 @@ class BoardFragment : Fragment() {
             Toast.LENGTH_SHORT
         ).show()
 
-        activity?.title = "My Board"
     }
 
     companion object {
