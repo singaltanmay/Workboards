@@ -26,8 +26,8 @@ class HomeFragment : Fragment() {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            text_home.text = it
-        })
+//        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+//            text_home.text = it
+//        })
     }
 }

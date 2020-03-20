@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.home.boardcollection.BoardCollectionFragment">
+
+    <TextView
+        android:id="@+id/fragment_board_collection_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:drawablePadding="4dp"
+        android:drawableTint="@color/colorAccent"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        tools:drawableStart="@drawable/ic_person_black_24dp"
+        tools:text="Personal Boards" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_board_collection_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp" />
+
+</LinearLayout>
