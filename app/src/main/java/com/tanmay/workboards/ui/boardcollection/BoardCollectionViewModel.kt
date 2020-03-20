@@ -7,22 +7,17 @@ import com.tanmay.workboards.model.Board
 
 open class BoardCollectionViewModel : ViewModel() {
 
-    //    private val _text = MutableLiveData<String>().apply {
-//        value = "This is home Fragment"
-//    }
-//    val text: LiveData<String> = _text
-
     private val _boards = MutableLiveData<List<Board>>().apply {
         value = mutableListOf(
-            Board(),
-            Board(),
-            Board(),
-            Board(),
-            Board(),
-            Board(),
-            Board(),
-            Board(),
-            Board()
+            Board(1),
+            Board(2),
+            Board(3),
+            Board(4),
+            Board(5),
+            Board(6),
+            Board(7),
+            Board(8),
+            Board(9)
         )
     }
 

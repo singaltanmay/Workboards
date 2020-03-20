@@ -1,5 +1,6 @@
 package com.tanmay.workboards.model
 
 data class Board(
-    var name : String = "Untitled"
+    val id: Long = -1,
+    var name: String = "Untitled"
 )

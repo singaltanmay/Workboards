@@ -9,10 +9,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.tanmay.workboards.R
 import com.tanmay.workboards.model.Board
 
-class BoardRecyclerAdapter(var data: List<Board>, val context: Context) :
+class BoardRecyclerAdapter(
+    var data: List<Board>,
+    val onClickNavigationLambda: ((Long, String) -> (Unit))?,
+    val context: Context
+) :
     RecyclerView.Adapter<BoardRecyclerAdapter.BoardHolder>() {
 
     inner class BoardHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val parent = itemView
         val boardTitleTextView = itemView.findViewById<TextView>(R.id.item_board_title)
     }
 
@@ -22,7 +27,15 @@ class BoardRecyclerAdapter(var data: List<Board>, val context: Context) :
     }
 
     override fun onBindViewHolder(holder: BoardHolder, position: Int) {
-        holder.boardTitleTextView.text = data[position].name
+        val currentBoard = data[position]
+
+        holder.boardTitleTextView.text = currentBoard.name
+        holder.parent.setOnClickListener {
+            onClickNavigationLambda?.invoke(
+                currentBoard.id,
+                currentBoard.name
+            )
+        }
     }
 
     override fun getItemCount() = data.size
