@@ -10,14 +10,75 @@ open class BoardCollectionViewModel : ViewModel() {
     private val _boards = MutableLiveData<List<Board>>().apply {
         value = mutableListOf(
             Board(1),
-            Board(2),
+            Board(2, "Nuthin'"),
             Board(3),
             Board(4),
-            Board(5),
+            Board(5, "Lp"),
             Board(6),
-            Board(7),
+            Board(
+                9, "pmsggnsooen\tsdng\n" +
+                        "sgkm\n" +
+                        "kdgskm\n" +
+                        "sdmkb\n"
+            ),
+            Board(7, "me"),
             Board(8),
-            Board(9)
+            Board(
+                9, "pmsggnsooen\tsdng\n" +
+                        "sgkm\n" +
+                        "kdgskm\n" +
+                        "sdmkb\n"
+            ), Board(3),
+            Board(4),
+            Board(5, "Lp"),
+            Board(6),
+            Board(
+                9, "pmsggnsooen\tsdng\n" +
+                        "sgkm\n" +
+                        "kdgskm\n" +
+                        "sdmkb\n"
+            ),
+            Board(7, "me"), Board(3),
+            Board(4),
+            Board(5, "Lp"),
+            Board(6),
+            Board(
+                9, "pmsggnsooen\tsdng\n" +
+                        "sgkm\n" +
+                        "kdgskm\n" +
+                        "sdmkb\n"
+            ),
+            Board(7, "me"), Board(3),
+            Board(4),
+            Board(5, "Lp"),
+            Board(6),
+            Board(
+                9, "pmsggnsooen\tsdng\n" +
+                        "sgkm\n" +
+                        "kdgskm\n" +
+                        "sdmkb\n"
+            ),
+            Board(7, "me"), Board(3),
+            Board(4),
+            Board(5, "Lp"),
+            Board(6),
+            Board(
+                9, "pmsggnsooen\tsdng\n" +
+                        "sgkm\n" +
+                        "kdgskm\n" +
+                        "sdmkb\n"
+            ),
+            Board(7, "me"), Board(3),
+            Board(4),
+            Board(5, "Lp"),
+            Board(6),
+            Board(
+                9, "pmsggnsooen\tsdng\n" +
+                        "sgkm\n" +
+                        "kdgskm\n" +
+                        "sdmkb\n"
+            ),
+            Board(7, "me")
         )
     }
 

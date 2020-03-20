@@ -33,8 +33,6 @@ class TaskListRecyclerAdapter(
 
         val tasks = currentTaskList.tasks
         if (tasks != null) {
-            holder.taskRecyclerView.layoutManager =
-                LinearLayoutManager(context, RecyclerView.VERTICAL, false)
             holder.taskRecyclerView.adapter = TaskRecyclerAdapter(
                 context,
                 tasks

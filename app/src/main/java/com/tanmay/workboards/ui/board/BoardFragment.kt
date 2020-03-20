@@ -29,9 +29,6 @@ class BoardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = TaskListRecyclerAdapter(context!!)
-
-        fragment_board_recycler_view.layoutManager =
-            LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         fragment_board_recycler_view.adapter = adapter
 
     }
