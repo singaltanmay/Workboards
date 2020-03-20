@@ -10,9 +10,9 @@ import com.tanmay.workboards.R
 import com.tanmay.workboards.model.Board
 
 class BoardRecyclerAdapter(
-    var data: List<Board>,
+    val context: Context,
     val onClickNavigationLambda: ((Long, String) -> (Unit))?,
-    val context: Context
+    var data: List<Board> = listOf()
 ) :
     RecyclerView.Adapter<BoardRecyclerAdapter.BoardHolder>() {
 

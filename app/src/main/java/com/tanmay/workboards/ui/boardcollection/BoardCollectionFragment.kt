@@ -37,7 +37,7 @@ open class BoardCollectionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = BoardRecyclerAdapter(listOf(), navigateToBoardLambda, context!!)
+        adapter = BoardRecyclerAdapter(context!!, navigateToBoardLambda)
 
         fragment_board_collection_recycler_view.layoutManager =
             LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
