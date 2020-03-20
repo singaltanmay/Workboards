@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tanmay.workboards.R
 import com.tanmay.workboards.model.TaskList
@@ -17,6 +18,7 @@ class TaskListRecyclerAdapter(
     inner class TaskListHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val parent = itemView
         val taskListTitleTextView = itemView.findViewById<TextView>(R.id.item_tasklist_title)
+        val taskRecyclerView = itemView.findViewById<RecyclerView>(R.id.item_tasklist_recycler_view)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskListHolder {
@@ -29,6 +31,15 @@ class TaskListRecyclerAdapter(
 
         holder.taskListTitleTextView.text = currentTaskList.name
 
+        val tasks = currentTaskList.tasks
+        if (tasks != null) {
+            holder.taskRecyclerView.layoutManager =
+                LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+            holder.taskRecyclerView.adapter = TaskRecyclerAdapter(
+                context,
+                tasks
+            )
+        }
     }
 
     override fun getItemCount(): Int = data.size
