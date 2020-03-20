@@ -9,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.get
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tanmay.workboards.R
 import com.tanmay.workboards.model.Board
@@ -40,7 +40,7 @@ open class BoardCollectionFragment : Fragment() {
         adapter = BoardRecyclerAdapter(context!!, navigateToBoardLambda)
 
         fragment_board_collection_recycler_view.layoutManager =
-            LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+            GridLayoutManager(context, 3, RecyclerView.HORIZONTAL, false)
         fragment_board_collection_recycler_view.adapter = adapter
     }
 
