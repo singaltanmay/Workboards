@@ -13,4 +13,5 @@
 
     <string name="home_second">Home Second</string>
     <string name="title_fab_board_creation">Create new board</string>
+    <string name="board_collection_title_personal_boards">Personal Boards</string>
 </resources>

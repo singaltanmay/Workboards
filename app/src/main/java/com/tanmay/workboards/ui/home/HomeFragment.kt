@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.tanmay.workboards.R
-import kotlinx.android.synthetic.main.fragment_home.*
+import com.tanmay.workboards.ui.boardcollection.BoardCollectionFragment
+import com.tanmay.workboards.ui.boardcollection.personalboardcollection.PersonalBoardCollectionFragment
 
 class HomeFragment : Fragment() {
 
@@ -26,6 +26,17 @@ class HomeFragment : Fragment() {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        val fragmentHolder = R.id.fragment_home_board_collection_holder_linear_layout
+
+        if (true /*Check here is boards exist*/) {
+            val beginTransaction = childFragmentManager.beginTransaction()
+            beginTransaction.add(fragmentHolder,
+                PersonalBoardCollectionFragment()
+            )
+            beginTransaction.commit()
+        }
+
 //        homeViewModel.text.observe(viewLifecycleOwner, Observer {
 //            text_home.text = it
 //        })

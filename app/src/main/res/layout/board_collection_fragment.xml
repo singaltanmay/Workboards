@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.home.boardcollection.BoardCollectionFragment">
+    tools:context=".ui.boardcollection.BoardCollectionFragment">
 
     <TextView
         android:id="@+id/fragment_board_collection_title_text_view"
@@ -17,7 +17,8 @@
         android:padding="8dp"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
         tools:drawableStart="@drawable/ic_person_black_24dp"
-        tools:text="Personal Boards" />
+        tools:targetApi="m"
+        tools:text="@string/board_collection_title_personal_boards" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_board_collection_recycler_view"

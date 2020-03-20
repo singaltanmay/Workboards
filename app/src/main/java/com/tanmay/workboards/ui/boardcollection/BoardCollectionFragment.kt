@@ -1,18 +1,18 @@
-package com.tanmay.workboards.ui.home.boardcollection
+package com.tanmay.workboards.ui.boardcollection
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import com.tanmay.workboards.R
 
-class BoardCollectionFragment : Fragment() {
+open class BoardCollectionFragment : Fragment() {
 
     companion object {
-        fun newInstance() = BoardCollectionFragment()
+        fun newInstance() =
+            BoardCollectionFragment()
     }
 
     private lateinit var viewModel: BoardCollectionViewModel
