@@ -5,10 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tanmay.workboards.R
-import com.tanmay.workboards.model.TaskList
+import com.tanmay.workboards.data.entity.TaskList
 
 class TaskListRecyclerAdapter(
     val context: Context,

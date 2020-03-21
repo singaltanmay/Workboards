@@ -1,9 +1,10 @@
 package com.tanmay.workboards.ui.boardcollection.personalboardcollection
 
-import androidx.lifecycle.MutableLiveData
+import android.app.Application
 import com.tanmay.workboards.ui.boardcollection.BoardCollectionViewModel
 
-class PersonalBoardCollectionViewModel : BoardCollectionViewModel(){
+class PersonalBoardCollectionViewModel(application: Application) :
+    BoardCollectionViewModel(application) {
 
 
     //    private val _text = MutableLiveData<String>().apply {

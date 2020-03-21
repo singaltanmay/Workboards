@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.tanmay.workboards.R
-import com.tanmay.workboards.model.Task
+import com.tanmay.workboards.data.entity.Task
 
 class TaskRecyclerAdapter(
     val context: Context,

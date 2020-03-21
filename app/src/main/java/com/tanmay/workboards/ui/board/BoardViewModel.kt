@@ -3,8 +3,8 @@ package com.tanmay.workboards.ui.board
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.tanmay.workboards.model.Task
-import com.tanmay.workboards.model.TaskList
+import com.tanmay.workboards.data.entity.Task
+import com.tanmay.workboards.data.entity.TaskList
 
 class BoardViewModel : ViewModel() {
 
