@@ -6,9 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.tanmay.workboards.R
-import com.tanmay.workboards.ui.boardcollection.BoardCollectionFragment
 import com.tanmay.workboards.ui.boardcollection.personalboardcollection.PersonalBoardCollectionFragment
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
@@ -31,10 +32,17 @@ class HomeFragment : Fragment() {
 
         if (true /*Check here is boards exist*/) {
             val beginTransaction = childFragmentManager.beginTransaction()
-            beginTransaction.add(fragmentHolder,
+            beginTransaction.add(
+                fragmentHolder,
                 PersonalBoardCollectionFragment()
             )
             beginTransaction.commit()
+        }
+
+        fragment_home_create_new_board_fab.setOnClickListener {
+            if (true /*Check if user authenticated*/ ) {
+                findNavController().navigate(R.id.action_nav_home_to_loginFragment)
+            }
         }
 
 //        homeViewModel.text.observe(viewLifecycleOwner, Observer {
