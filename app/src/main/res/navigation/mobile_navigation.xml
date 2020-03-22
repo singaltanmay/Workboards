@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_nav_home_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_boardCreationFragment"
+            app:destination="@id/boardCreationFragment" />
     </fragment>
     <fragment
         android:id="@+id/boardFragment"
@@ -40,4 +43,9 @@
             android:id="@+id/action_signUpFragment_to_nav_home"
             app:destination="@id/nav_home" />
     </fragment>
+    <fragment
+        android:id="@+id/boardCreationFragment"
+        android:name="com.tanmay.workboards.ui.creation.BoardCreationFragment"
+        android:label="Create New Board"
+        tools:layout="@layout/fragment_creation_board" />
 </navigation>

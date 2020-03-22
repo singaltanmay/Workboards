@@ -43,8 +43,10 @@ class HomeFragment : Fragment() {
         }
 
         fragment_home_create_new_board_fab.setOnClickListener {
-            if (!(context?.applicationContext as WorkboardsApplication).userLoggedIn) {
+            if (/*!*/(context?.applicationContext as WorkboardsApplication).userLoggedIn) {
                 findNavController().navigate(R.id.action_nav_home_to_loginFragment)
+            } else {
+                findNavController().navigate(R.id.action_nav_home_to_boardCreationFragment)
             }
         }
 

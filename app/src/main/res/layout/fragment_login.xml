@@ -57,7 +57,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
-            style="@style/Widget.Workboards.TextInputLayout"
+            style="@style/Widget.Workboards.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:hint="@string/login_hint_email_id"
@@ -75,7 +75,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/frag_user_login_password_text_input"
-            style="@style/Widget.Workboards.TextInputLayout"
+            style="@style/Widget.Workboards.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/login_hint_password"
