@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.tanmay.workboards.R
 import com.tanmay.workboards.application.WorkboardsApplication
-import com.tanmay.workboards.ui.boardcollection.personalboardcollection.PersonalBoardCollectionFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -22,22 +22,24 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
+            ViewModelProvider(this).get(HomeViewModel::class.java)
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         val fragmentHolder = R.id.fragment_home_board_collection_holder_linear_layout
 
         if (true /*Check here is boards exist*/) {
-            val beginTransaction = childFragmentManager.beginTransaction()
-            beginTransaction.add(
-                fragmentHolder,
-                PersonalBoardCollectionFragment()
-            )
-            beginTransaction.commit()
+            homeViewModel.frag1.observe(viewLifecycleOwner, Observer {
+                val beginTransaction = childFragmentManager.beginTransaction()
+                beginTransaction.replace(
+                    fragmentHolder,
+                    it
+                )
+                beginTransaction.commit()
+            })
+
         }
 
         fragment_home_create_new_board_fab.setOnClickListener {
@@ -46,8 +48,5 @@ class HomeFragment : Fragment() {
             }
         }
 
-//        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-//            text_home.text = it
-//        })
     }
 }

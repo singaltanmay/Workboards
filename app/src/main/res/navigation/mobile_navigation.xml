@@ -17,18 +17,6 @@
             android:id="@+id/action_nav_home_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
-
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.tanmay.workboards.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.tanmay.workboards.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/boardFragment"
         android:name="com.tanmay.workboards.ui.board.BoardFragment"
@@ -38,7 +26,7 @@
         android:id="@+id/loginFragment"
         android:name="com.tanmay.workboards.ui.user.login.LoginFragment"
         android:label="LoginFragment"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
@@ -47,7 +35,7 @@
         android:id="@+id/signUpFragment"
         android:name="com.tanmay.workboards.ui.user.signup.SignUpFragment"
         android:label="Sign Up"
-        tools:layout="@layout/fragment_sign_up" >
+        tools:layout="@layout/fragment_sign_up">
         <action
             android:id="@+id/action_signUpFragment_to_nav_home"
             app:destination="@id/nav_home" />
