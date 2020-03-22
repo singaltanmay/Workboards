@@ -61,13 +61,16 @@ class LoginFragment : Fragment() {
     }
 
     private fun onLoginPressed() {
+        updateViewModel()
+
         val emailString = viewModel.email.value.toString()
         val passwordString = viewModel.password.value.toString()
         val application = context?.applicationContext as WorkboardsApplication
         val user = application.user
         if (user.email.equals(emailString) && user.password.equals(passwordString)) {
             application.userLoggedIn = true
-            Toast.makeText(context, "Welcome ${user.firstName != null ?:""}!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Welcome ${user.firstName != null ?: ""}!", Toast.LENGTH_SHORT)
+                .show()
             findNavController().popBackStack()
         } else Toast.makeText(context, "Invalid credentials", Toast.LENGTH_SHORT).show()
     }
@@ -75,6 +78,18 @@ class LoginFragment : Fragment() {
     override fun onPause() {
         super.onPause()
         (activity as AppCompatActivity).supportActionBar?.show()
+    }
+
+    private fun updateViewModel() {
+        val email = frag_user_login_email_id_edit_text.text
+        if (email != null) {
+            viewModel.updateEmail(email)
+        }
+
+        val password = frag_user_login_password_edit_text.text
+        if (password != null) {
+            viewModel.updatePassword(password)
+        }
     }
 
 }

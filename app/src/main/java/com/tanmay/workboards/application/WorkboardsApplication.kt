@@ -47,10 +47,10 @@ open class WorkboardsApplication : Application() {
 
 
     data class User(
-        val firstName: String?,
-        val lastName: String?,
+        val firstName: String? = null,
+        val lastName: String? = null,
         val email: String,
-        val password: String?
+        val password: String? = null
     ) {
         companion object {
             val KEY_FIRST_NAME: String = "user_first_name"

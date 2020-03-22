@@ -13,4 +13,12 @@ class LoginViewModel : ViewModel() {
     val email: LiveData<Editable> = _email
     val password: LiveData<Editable> = _password
 
+    fun updateEmail(email: Editable) {
+        this._email.value = email
+    }
+
+    fun updatePassword(password: Editable) {
+        this._password.value = password
+    }
+
 }
