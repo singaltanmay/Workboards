@@ -8,10 +8,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.tanmay.workboards.R
-import com.tanmay.workboards.model.TaskList
+import com.tanmay.workboards.data.entity.TaskList
 import kotlinx.android.synthetic.main.fragment_board.*
 
 class BoardFragment : Fragment() {

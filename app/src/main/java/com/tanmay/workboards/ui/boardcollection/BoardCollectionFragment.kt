@@ -9,10 +9,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.get
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.tanmay.workboards.R
-import com.tanmay.workboards.model.Board
+import com.tanmay.workboards.data.entity.Board
 import com.tanmay.workboards.ui.board.BoardFragment
 import kotlinx.android.synthetic.main.fragment_board_collection.*
 
@@ -48,7 +46,7 @@ open class BoardCollectionFragment : Fragment() {
     }
 
     fun setViewModelObservers() {
-        viewModel.boards.observe(viewLifecycleOwner, Observer {
+        viewModel.allBoards.observe(viewLifecycleOwner, Observer {
             refreshAdapterData(it)
         })
     }

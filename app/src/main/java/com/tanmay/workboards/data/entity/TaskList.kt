@@ -1,4 +1,4 @@
-package com.tanmay.workboards.model
+package com.tanmay.workboards.data.entity
 
 data class TaskList(
     var name : String,

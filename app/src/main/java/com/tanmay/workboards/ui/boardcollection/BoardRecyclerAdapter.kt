@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.tanmay.workboards.R
-import com.tanmay.workboards.model.Board
+import com.tanmay.workboards.data.entity.Board
 
 class BoardRecyclerAdapter(
     val context: Context,
@@ -32,7 +32,7 @@ class BoardRecyclerAdapter(
         holder.boardTitleTextView.text = currentBoard.name
         holder.parent.setOnClickListener {
             onClickNavigationLambda?.invoke(
-                currentBoard.id,
+                currentBoard.id!!,
                 currentBoard.name
             )
         }
