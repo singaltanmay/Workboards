@@ -25,9 +25,9 @@
         android:id="@+id/fragment_board_collection_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="8dp"
         app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
-        app:spanCount="3" />
+        app:spanCount="2" />
 
 </LinearLayout>

@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.tanmay.workboards.R
 import com.tanmay.workboards.data.entity.TaskList
 import kotlinx.android.synthetic.main.fragment_board.*
@@ -26,7 +27,10 @@ class BoardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = TaskListRecyclerAdapter(context!!)
+        adapter = TaskListRecyclerAdapter(
+            context!!,
+            navToTaskAddLamda = {findNavController().navigate(R.id.action_boardFragment_to_taskCreationFragment)}
+        )
         fragment_board_recycler_view.adapter = adapter
 
     }
@@ -42,6 +46,11 @@ class BoardFragment : Fragment() {
             "Navigate to board ${arguments?.getLong(BUNDLE_BOARD_ID_KEY).toString()}",
             Toast.LENGTH_SHORT
         ).show()
+
+        navigate_task_list_creation_fab.setOnClickListener {
+            findNavController().navigate(R.id.action_boardFragment_to_taskListCreationFragment)
+        }
+
 
     }
 

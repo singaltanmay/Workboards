@@ -1,4 +1,4 @@
-package com.tanmay.workboards.ui.creation
+package com.tanmay.workboards.ui.creation.board
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,7 +13,8 @@ import kotlinx.android.synthetic.main.fragment_creation_board.*
 class BoardCreationFragment : Fragment() {
 
     companion object {
-        fun newInstance() = BoardCreationFragment()
+        fun newInstance() =
+            BoardCreationFragment()
     }
 
     private lateinit var viewModel: BoardCreationViewModel

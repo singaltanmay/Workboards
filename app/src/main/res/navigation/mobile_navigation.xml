@@ -24,7 +24,14 @@
         android:id="@+id/boardFragment"
         android:name="com.tanmay.workboards.ui.board.BoardFragment"
         android:label="fragment_board"
-        tools:layout="@layout/fragment_board" />
+        tools:layout="@layout/fragment_board">
+        <action
+            android:id="@+id/action_boardFragment_to_taskListCreationFragment"
+            app:destination="@id/taskListCreationFragment" />
+        <action
+            android:id="@+id/action_boardFragment_to_taskCreationFragment"
+            app:destination="@id/taskCreationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.tanmay.workboards.ui.user.login.LoginFragment"
@@ -45,7 +52,21 @@
     </fragment>
     <fragment
         android:id="@+id/boardCreationFragment"
-        android:name="com.tanmay.workboards.ui.creation.BoardCreationFragment"
+        android:name="com.tanmay.workboards.ui.creation.board.BoardCreationFragment"
         android:label="Create New Board"
         tools:layout="@layout/fragment_creation_board" />
+    <fragment
+        android:id="@+id/taskListCreationFragment"
+        android:name="com.tanmay.workboards.ui.creation.tasklist.TaskListCreationFragment"
+        android:label="Create New Task List"
+        tools:layout="@layout/fragment_creation_task_list" >
+        <action
+            android:id="@+id/action_taskListCreationFragment_to_taskCreationFragment"
+            app:destination="@id/taskCreationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskCreationFragment"
+        android:name="com.tanmay.workboards.ui.creation.task.TaskCreationFragment"
+        android:label="Create New Task"
+        tools:layout="@layout/fragment_creation_task" />
 </navigation>
