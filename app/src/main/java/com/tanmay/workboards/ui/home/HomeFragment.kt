@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.tanmay.workboards.R
+import com.tanmay.workboards.application.WorkboardsApplication
 import com.tanmay.workboards.ui.boardcollection.personalboardcollection.PersonalBoardCollectionFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -40,7 +41,7 @@ class HomeFragment : Fragment() {
         }
 
         fragment_home_create_new_board_fab.setOnClickListener {
-            if (true /*Check if user authenticated*/ ) {
+            if (!(context?.applicationContext as WorkboardsApplication).userLoggedIn) {
                 findNavController().navigate(R.id.action_nav_home_to_loginFragment)
             }
         }
