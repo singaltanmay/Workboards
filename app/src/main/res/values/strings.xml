@@ -19,4 +19,10 @@
     <string name="login_hint_password">Password</string>
     <string name="login_button_login">Login</string>
     <string name="login_button_sign_up">Sign Up</string>
+    <string name="sign_up_hint_first_name">First Name</string>
+    <string name="sign_up_hint_last_name">Last Name</string>
+    <string name="login_hint_confirm_password">Confirm Password</string>
+    <string name="sign_up_button_done">Done</string>
+    <string name="sign_up_button_cancel">Cancel</string>
+
 </resources>

@@ -40,7 +40,7 @@ class LoginFragment : Fragment() {
 //            listener?.onLogin(-1)
         }
         signUpButton.setOnClickListener {
-//            findNavController().navigate(R.id.action_userLoginFragment_to_userCreationFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
         }
     }
 

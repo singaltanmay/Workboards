@@ -98,7 +98,6 @@
         style="@style/Widget.Workboards.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/primary_text_dark"
         android:text="@string/login_button_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
