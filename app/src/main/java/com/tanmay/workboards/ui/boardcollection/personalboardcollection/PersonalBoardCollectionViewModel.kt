@@ -3,8 +3,8 @@ package com.tanmay.workboards.ui.boardcollection.personalboardcollection
 import android.app.Application
 import com.tanmay.workboards.ui.boardcollection.BoardCollectionViewModel
 
-class PersonalBoardCollectionViewModel(application: Application) :
-    BoardCollectionViewModel(application) {
+class PersonalBoardCollectionViewModel() :
+    BoardCollectionViewModel() {
 
 
     //    private val _text = MutableLiveData<String>().apply {

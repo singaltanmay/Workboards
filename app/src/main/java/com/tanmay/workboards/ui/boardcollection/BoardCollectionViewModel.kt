@@ -9,9 +9,9 @@ import com.tanmay.workboards.data.AppDatabase
 import com.tanmay.workboards.data.entity.Board
 import com.tanmay.workboards.data.repository.BoardRepository
 
-open class BoardCollectionViewModel(application: Application) : AndroidViewModel(application) {
+open class BoardCollectionViewModel() : ViewModel() {
 
-    private val repository: BoardRepository
+//    private val repository: BoardRepository
 
     private val _boards = MutableLiveData<List<Board>>().apply {
         value = mutableListOf(
@@ -96,8 +96,8 @@ open class BoardCollectionViewModel(application: Application) : AndroidViewModel
     val allBoards: LiveData<List<Board>> = _boards
 
     init {
-        val boardDao = AppDatabase.getDatabase(application).boardDao()
-        repository = BoardRepository(boardDao)
+//        val boardDao = AppDatabase.getDatabase(application).boardDao()
+//        repository = BoardRepository(boardDao)
 
         //allBoards = repository.allBoards
     }
