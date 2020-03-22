@@ -3,12 +3,13 @@ package com.tanmay.workboards.application
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.core.content.edit
 
 open class WorkboardsApplication : Application() {
 
     companion object {
         val SHARED_PREFERENCES_KEY = "com.tanmay.workboards_preferences"
-
+        val USER_LOGGED_IN_KEY = "user_logged_in"
         lateinit var instance: WorkboardsApplication
             private set
     }
@@ -23,17 +24,27 @@ open class WorkboardsApplication : Application() {
         Context.MODE_PRIVATE
     )
 
-    fun isUserLoggedIn(prefs: SharedPreferences = getAppPreferences()) =
-        prefs.contains(User.KEY_EMAIL)
+    var userLoggedIn
+        get() = getAppPreferences().getBoolean(USER_LOGGED_IN_KEY, false)
+        set(value) = getAppPreferences().edit { putBoolean(USER_LOGGED_IN_KEY, value) }
 
-    fun getUser(prefs: SharedPreferences = getAppPreferences()): User {
-        return User(
-            prefs.getString(User.KEY_FIRST_NAME, null),
-            prefs.getString(User.KEY_LAST_NAME, null),
-            prefs.getString(User.KEY_EMAIL, "")!!,
-            prefs.getString(User.KEY_PASSWORD, null)
-        )
-    }
+    var user: User
+        get() {
+            val prefs = getAppPreferences()
+            return User(
+                prefs.getString(User.KEY_FIRST_NAME, null),
+                prefs.getString(User.KEY_LAST_NAME, null),
+                prefs.getString(User.KEY_EMAIL, "")!!,
+                prefs.getString(User.KEY_PASSWORD, null)
+            )
+        }
+        set(value) = getAppPreferences().edit {
+            putString(User.KEY_FIRST_NAME, value.firstName)
+            putString(User.KEY_LAST_NAME, value.lastName)
+            putString(User.KEY_EMAIL, value.email)
+            putString(User.KEY_PASSWORD, value.password)
+        }
+
 
     data class User(
         val firstName: String?,

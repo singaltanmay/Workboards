@@ -3,6 +3,7 @@
     package="com.tanmay.workboards">
 
     <application
+        android:name=".application.WorkboardsApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
