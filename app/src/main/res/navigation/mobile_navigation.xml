@@ -36,7 +36,7 @@
         tools:layout="@layout/fragment_board" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.tanmay.workboards.ui.user.LoginFragment"
+        android:name="com.tanmay.workboards.ui.user.login.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login" />
 </navigation>

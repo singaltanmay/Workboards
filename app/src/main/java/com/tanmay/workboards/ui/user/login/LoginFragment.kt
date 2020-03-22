@@ -1,4 +1,4 @@
-package com.tanmay.workboards.ui.user
+package com.tanmay.workboards.ui.user.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
