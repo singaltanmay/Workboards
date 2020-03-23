@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
+import com.tanmay.workboards.data.entity.Board
 
 open class WorkboardsApplication : Application() {
 
@@ -59,5 +60,7 @@ open class WorkboardsApplication : Application() {
             val KEY_PASSWORD = "user_password"
         }
     }
+
+    val db: MutableList<Board> = mutableListOf()
 
 }

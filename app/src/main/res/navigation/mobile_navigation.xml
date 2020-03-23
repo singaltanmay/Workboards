@@ -59,11 +59,7 @@
         android:id="@+id/taskListCreationFragment"
         android:name="com.tanmay.workboards.ui.creation.tasklist.TaskListCreationFragment"
         android:label="Create New Task List"
-        tools:layout="@layout/fragment_creation_task_list" >
-        <action
-            android:id="@+id/action_taskListCreationFragment_to_taskCreationFragment"
-            app:destination="@id/taskCreationFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_creation_task_list"></fragment>
     <fragment
         android:id="@+id/taskCreationFragment"
         android:name="com.tanmay.workboards.ui.creation.task.TaskCreationFragment"

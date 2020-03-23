@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.tanmay.workboards.R
 import com.tanmay.workboards.data.entity.TaskList
+import com.tanmay.workboards.ui.creation.tasklist.TaskListCreationFragment
 import kotlinx.android.synthetic.main.fragment_board.*
 
 class BoardFragment : Fragment() {
@@ -29,7 +30,7 @@ class BoardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         adapter = TaskListRecyclerAdapter(
             context!!,
-            navToTaskAddLamda = {findNavController().navigate(R.id.action_boardFragment_to_taskCreationFragment)}
+            navToTaskAddLamda = { findNavController().navigate(R.id.action_boardFragment_to_taskCreationFragment) }
         )
         fragment_board_recycler_view.adapter = adapter
 
@@ -38,6 +39,7 @@ class BoardFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(BoardViewModel::class.java)
+        viewModel.boardId = arguments?.getLong(BUNDLE_BOARD_ID_KEY) ?: -1
 
         setViewModelObservers()
 
@@ -48,21 +50,33 @@ class BoardFragment : Fragment() {
         ).show()
 
         navigate_task_list_creation_fab.setOnClickListener {
-            findNavController().navigate(R.id.action_boardFragment_to_taskListCreationFragment)
+            viewModel.addDummyData()
+            findNavController().navigate(
+                R.id.action_boardFragment_to_taskListCreationFragment,
+                TaskListCreationFragment.navToBoard(
+                    this.arguments?.getLong(BUNDLE_BOARD_ID_KEY) ?: -1
+                )
+            )
         }
-
 
     }
 
     fun setViewModelObservers() {
         viewModel.tasklists.observe(viewLifecycleOwner, Observer {
-            refreshAdapterData(it)
+            if (it != null) {
+                refreshAdapterData(it)
+            }
         })
     }
 
     fun refreshAdapterData(data: List<TaskList>) {
         adapter.data = data
         adapter.notifyDataSetChanged()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        viewModel.refreshTaskList()
     }
 
     companion object {

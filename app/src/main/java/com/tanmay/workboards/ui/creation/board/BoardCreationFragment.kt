@@ -8,14 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.tanmay.workboards.R
+import com.tanmay.workboards.application.WorkboardsApplication
+import com.tanmay.workboards.data.entity.Board
 import kotlinx.android.synthetic.main.fragment_creation_board.*
 
 class BoardCreationFragment : Fragment() {
-
-    companion object {
-        fun newInstance() =
-            BoardCreationFragment()
-    }
 
     private lateinit var viewModel: BoardCreationViewModel
 
@@ -32,7 +29,8 @@ class BoardCreationFragment : Fragment() {
         // TODO: Use the ViewModel
 
         boardcreationdone.setOnClickListener {
-            // Save the board
+            val db = (context?.applicationContext as WorkboardsApplication).db
+            db.add(Board(db.size.toLong(), spfndgnb.text.toString()))
             findNavController().popBackStack()
         }
 

@@ -34,6 +34,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
+                    android:id="@+id/spfndgnb"
                     android:layout_height="wrap_content"
                     android:inputType="textAutoCorrect"
                     android:textAppearance="@android:style/TextAppearance.DeviceDefault.WindowTitle" />

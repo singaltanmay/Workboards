@@ -4,12 +4,10 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.tanmay.workboards.data.AppDatabase
+import com.tanmay.workboards.application.WorkboardsApplication
 import com.tanmay.workboards.data.entity.Board
-import com.tanmay.workboards.data.repository.BoardRepository
 
-open class BoardCollectionViewModel() : ViewModel() {
+open class BoardCollectionViewModel(application: Application) : AndroidViewModel(application) {
 
 //    private val repository: BoardRepository
 
@@ -93,7 +91,11 @@ open class BoardCollectionViewModel() : ViewModel() {
         )
     }
 
-    val allBoards: LiveData<List<Board>> = _boards
+    private val _memBoards = MutableLiveData<List<Board>>().apply {
+        value = (application as WorkboardsApplication).db
+    }
+
+    val allBoards: LiveData<List<Board>> = _memBoards
 
     init {
 //        val boardDao = AppDatabase.getDatabase(application).boardDao()
